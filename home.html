@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page of the Project</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Century Gothic";
+        background-image: url("img/low_poly_banner_design_2203.jpg");
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        font-family:"Century Gothic";
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        text-align: center;
+      }
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      @media screen and (max-height: 450px) {
+      }
+      .info {
+        z-index: auto;
+        /* margin-left: 610px;
+
+        margin-right: 50px; */
+        text-align: center;
+        width: 200%;
+      }
+      .info-2 {
+        font-size: large;
+        font-style: italic;
+        text-align: center;
+      }
+      .box {
+        color: black;
+        width: 100px;
+        font-size: large;
+        padding: 50px;
+        margin: 80px;
+      }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 150px;
+        text-align: center;
+        font-size: large;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="home" href="./home.html">Home</a>
+      <a href="./intro.html">Introduction</a>
+      <a href="./history.html">History</a>
+      <a href="./kafka.html">Kafka</a>
+      <a href="./jms.html">JMS</a>
+      <a href="./citations.html"> References </a>
+      <a href="./analytical.html"> Our view </a>
+      
+    </div>
+    <br />
+    <div>
+      <h1>Hello there!</h1>
+      <br />
+      <div class="info-2">
+        <p>
+          Do you want to learn about Message Oriented Middleware? 
+        </p>
+      </div>
+      <br />
+      <div class="info-2">
+        <p>
+          Please select from the below options to learn more about it:
+        </p>
+        <br />
+        <br />
+        <a class="box" href="./jms.html">JMS - Java Messaging Service</a>
+        <a class="box" href="./kafka.html">Apache Kafka</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Created by Rohan, Subham Kumar & Siri Rachappa Jarmale</p>
+      
+    </div>
+  </body>
+</html>

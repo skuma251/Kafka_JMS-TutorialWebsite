@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page of the Project</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        text-align: center;
+      }
+      .topnav a:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      .sidenav {
+        border: 1px solid black;
+        height: 300%;
+        width: 200px;
+        position: absolute;
+        z-index: 2;
+        top: 100;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: block;
+      }
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      #introduction,
+      h2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        font-size: large;
+        font-weight: bold;
+      }
+      #jms,
+      #kafka {
+        font-family: "Century Gothic";
+      }
+      .info-2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+      .info-3 {
+        z-index: auto;
+        margin-left: 280px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family:  "Century Gothic";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="home" href="../home.html">Home</a>
+      <a href="../intro.html">Message Oriented Middleware</a>
+      <a href="../kafka.html">Kafka</a>
+      <a href="../jms.html">JMS</a>
+    </div>
+    <div class="sidenav">
+      <a href="../jms.html">Introduction</a>
+      <a href="./JMS_Architechture.html">Architecture</a>
+      <a href="./JMS_Messages.html">JMS Messages</a>
+      <a href="./JMS_PTP.html">Point to point messaging</a>
+      <a href="./JMS_PubSub.html">Publish-Subscribe messaging</a>
+      <a href="./JMS_SendingMessage.html">Sending Message</a>
+      <a href="./JMS_RecievingMessage.html">Recieving Message</a>
+    </div>
+    <br />
+    <p id="introduction">JMS Message</p>
+    <p class="info-2">
+      JMS messages are composed of three parts being headers, properties, and
+      body. We will discuss all three parts of the messages in detail.
+    </p>
+    <div class="info-2">
+      <p><strong>1. JMS Headers</strong></p>
+      <p>
+        Headers are used to identify many useful information about the message
+        like, the producer of the message, the destination of the message, when
+        was the message produced and many other information which can be used to
+        keep a track of the message. We make the use of setter methods to set
+        the headers value. The setter methods will be discussed with their
+        respective headers. There are various headers that can be used depending
+        upon the developer’s requirement, below we will discuss a few important
+        headers.
+      </p>
+      <li>
+        <strong>JMS MessageID:</strong>
+      </li>
+      <p>
+        All JMS messages have a unique ID to identify each message sent by the
+        provider. The message ID is a string value with a unique set of
+        characters. We make the use of setJMSMessageID setter method to set or
+        update the value of JMSMessageID header. Since message ID carries an
+        overhead, the applications not using the message ID, the JMS producer
+        can give a hint to JMS provider to suppress the message id to null by
+        using setDisableMessageID method.
+      </p>
+      <li>
+        <strong>JMS CorrelationID:</strong>
+      </li>
+      <p>
+        In order to keep track of the message flow throughout the application
+        architecture we use the JMSCorrelationID headers. A typical example
+        would be in the scenario where we need to link a response to a
+        particular request message. setJMSCorrelationID is the setter method to
+        set the correlation id header of the message.
+      </p>
+      <li>
+        <strong>JMS ReplyTo:</strong>
+      </li>
+      <p>
+        This header field contains the destination value (queue or topic) to
+        which the reply of the message should be sent. setJMSReplyTo setter
+        method to set the value of the destination in this header.
+      </p>
+      <li>
+        <strong>JMS Expiration:</strong>
+      </li>
+      <p>
+        This header is used to set the time at which the message will expire.
+        JMS does this by setting the time to live field whose value is specified
+        while JMS producer is send thing message using send() method. The setter
+        method setJMSExpiration is used to set the expiration value of the
+        message.
+      </p>
+      <li>
+        <strong>JMS Priority:</strong>
+      </li>
+      <p>
+        JMS defines 10 priority levels to the messages in the range of 0-9, 0
+        being the lowest and 9 being the highest priority. This is done to
+        expedite the message delivery before the low priority messages.
+        setJMSPriority setter method is used to set the priority of the messages
+        by JMS producer.
+      </p>
+      <p>
+        <strong>Note: </strong>There are various other JMS header fields that
+        can be used as per the user’s requirements: JMSDestination,
+        JMSDeliveryMode, JMSTimestamp, JMSRedelivered, JMSDeliveryTime etc.
+      </p>
+      <br />
+      <p><strong>2. JMS Properties</strong></p>
+      <br />
+      <p>
+        These are additional and optional header fields which we can add to the
+        JMS messages. There are basically three categories of properties that
+        can be added to a JMS message:
+      </p>
+      <li>Application Specific properties</li>
+      <li>Standard Properties</li>
+      <li>JMS provider properties</li>
+      <p>
+        All JMS defined properties starts with initials JMSX as their prefix.
+        Below are some JMS defined properties:
+      </p>
+      <ol>
+        <li>JMSXUserID</li>
+        <li>JMSXAppID</li>
+        <li>JMSXDeliveryCount</li>
+        <li>JMSXGroupID</li>
+        <li>JMSXGroupSeq</li>
+        <li>JMSXProducerTXID</li>
+        <li>JMSXConsumerTXID</li>
+        <li>JMSXRcvTimestamp</li>
+        <li>JMSXState</li>
+      </ol>
+      <br />
+      <p><strong>2. JMS Body</strong></p>
+      <p>
+        JMS provides five different types of messages that can be sent using JMS
+        providers.
+      </p>
+      <li>
+        <strong>Stream Messages</strong>
+      </li>
+      <p>These messages contains the stream of Java primitive values.</p>
+      <li>
+        <strong>Map Messages</strong>
+      </li>
+      <p>
+        These types of messages are composed of name-value pair where name
+        contains the String objects while the values contain the java primitive
+        types.
+      </p>
+      <li>
+        <strong>Text Messages</strong>
+      </li>
+      <p>These messages body contains the String values.</p>
+      <li>
+        <strong>Object Messages</strong>
+      </li>
+      <p>These message types contains the serializable Java object.</p>
+      <li>
+        <strong>Byte Messages</strong>
+      </li>
+      <p>These messages contains the stream of uninterrupted bytes.</p>
+    </div>
+  </body>
+</html>

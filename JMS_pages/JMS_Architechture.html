@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page of the Project</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        font-family:"Century Gothic";
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        text-align: center;
+      }
+      .topnav a:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      .sidenav {
+        border: 1px solid black;
+        height: 300%;
+        width: 200px;
+        position: absolute;
+        z-index: 2;
+        top: 100;
+        left: 0;
+        background-color: black;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: block;
+      }
+      .sidenav a:hover {
+        color: white;
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      #introduction,
+      h2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        font-size: large;
+        font-weight: bold;
+      }
+      #jms,
+      #kafka {
+        font-family: "Century Gothic";
+      }
+      .info-2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+      .info-3 {
+        z-index: auto;
+        margin-left: 280px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="home" href="../home.html">Home</a>
+      <a href="../intro.html">Message Oriented Middleware</a>
+      <a href="../kafka.html">Kafka</a>
+      <a href="../jms.html">JMS</a>
+    </div>
+    <div class="sidenav">
+      <a href="../jms.html">Introduction</a>
+      <a href="./JMS_Architechture.html">Architecture</a>
+      <a href="./JMS_Messages.html">JMS Messages</a>
+      <a href="./JMS_PTP.html">Point to point messaging</a>
+      <a href="./JMS_PubSub.html">Publish-Subscribe messaging</a>
+      <a href="./JMS_SendingMessage.html">Sending Message</a>
+      <a href="./JMS_RecievingMessage.html">Recieving Message</a>
+    </div>
+    <br />
+    <div>
+      <p id="introduction">JMS Architecture</p>
+      <p class="info-2">
+        This topic provides us with the details of the structure of JMS and its
+        composition.
+      </p>
+      <h2>Elements of JMS</h2>
+      <div class="info-2">
+        <li>
+          <strong>Client – </strong> The application or software that sends and
+          receives messages. <br />
+        </li>
+        <li>
+          <strong>Messages – </strong>The information that needs to be exchanged
+          between the applications.
+        </li>
+        <li>
+          <strong>JMS Provider – </strong>A message-oriented middleware product
+          that implements JMS and adds other administrative functionalities.
+        </li>
+        <li>
+          <strong>JMS Sender –</strong> It is an application or code that
+          creates and sends message to the destination. Also known as JMS
+          Producer or Publisher.
+        </li>
+        <li>
+          <strong>JMS Receiver – </strong>It is the application which will
+          receive or consume the message the JMS sender has created and sent.
+          Also known as JMS Consumer or Subscriber.
+        </li>
+      </div>
+      <br />
+      <div class="info-2">
+        <p><strong>JMS API</strong></p>
+        <p>
+          JMS has broadly offered two sets of APIs for sending and receiving
+          messages.
+        </p>
+        <li>
+          <strong>JMS 1.1 – </strong>This is also referred to as the classic
+          API. It offers a single set of interfaces to implement both point to
+          point messaging and pub/sub messaging models.
+        </li>
+        <br />
+        <li>
+          <strong>JMS 2.0 – </strong>This is also referred to as the simplified
+          API. It offers all the functionality of the classic API with fewer
+          interfaces, and it is simpler to use as the name suggests.
+        </li>
+
+        <p style="font-weight: bold">
+          Note - For this tutorial we will use JMS 2.0 API for our demo and
+          example.
+        </p>
+        <br />
+        <p><strong>JMS 1.1 / The classic API</strong></p>
+        <p>JMS 1.1 provides the below interfaces:</p>
+        <li>
+          <strong>ConnectionFactory - </strong>It is used by JMS clients to
+          create a connection with JMS providers.
+        </li>
+        <li>
+          <strong>Connection - </strong>This is an active connection to JMS
+          provider
+        </li>
+        <li>
+          <strong>Session - </strong> A single threaded context for sending and
+          receiving messaged
+        </li>
+        <li>
+          <strong>MessageProducer - </strong>An object that creates and sends
+          the message to the JMS provider, either queue or topic.
+        </li>
+        <li>
+          <strong>MessageConsumer - </strong>An object that is created to
+          consume the message posted to the queue or topic by the producer.
+        </li>
+        <br />
+        <img class="info-2" src="../img/JMS1.1.png" />
+        <br />
+        <p><strong>JMS 2.0 / The simplified API</strong></p>
+        <p>
+          JMS 2.0 provides the simplified version of the interfaces provided by
+          the classic API:
+        </p>
+        <li>
+          <strong>ConnectionFactory - </strong>It is the same object as
+          discussed in the classic API, which is used to create a connection
+          with JMS provider.
+        </li>
+        <li>
+          <strong>JMS Context - </strong> : It is similar to session of the
+          classic API which is used to create a single threaded context for
+          sending and receiving message.
+        </li>
+        <li>
+          <strong>JMS Producer - </strong>This is the object which is used to
+          create and send messages to the JMS provider
+        </li>
+        <li>
+          <strong>JMS Consumer - </strong>: This is the object to consume the
+          message from the queue or the topic.
+        </li>
+        <br />
+        <img class="info-2" src="../img/JMS2.0.png" />
+      </div>
+      <br />
+    </div>
+  </body>
+</html>
