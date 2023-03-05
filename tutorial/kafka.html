@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page of the Project</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        text-align: center;
+      }
+      .topnav a:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      .sidenav {
+        border: 1px solid black;
+        height: 200%;
+        width: 200px;
+        position: absolute;
+        z-index: 2;
+        top: 100;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: rgb(253, 255, 253);
+        display: block;
+      }
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      #introduction,
+      h2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        font-size: large;
+        font-weight: bold;
+      }
+      #jms,
+      #kafka {
+        font-family: "Century Gothic";
+      }
+      .info-2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+      .info-3 {
+        z-index: auto;
+        margin-left: 280px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="home" href="./home.html">Home</a>
+      <a href="./intro.html">Introduction</a>
+      <a href="./kafka.html">Kafka</a>
+      <a href="./jms.html">JMS</a>
+      <a href="./citations.html"> References </a>
+      <a href="./analytical.html"> Our view </a>
+      <a href="./resources.html"> Additional resources </a>
+      
+      </div>
+    <div class="sidenav">
+      <a href="#introduction">Introduction</a>
+      <a href="./Kafka_pages/Kafka_Architecture.html">Architecture</a>
+      <a href="./Kafka_pages/Kafka_Installation.html">Kafka Installation</a>
+      <a href="./Kafka_pages/Kafka_working.html">Working on Kafka</a>
+      <a href="./Kafka_pages/Kafka_Project_Demo.html">Kafka Project Demo</a>
+    </div>
+    <br />
+    <div>
+      <br />
+      <h1>Apache Kafka</h1>
+      <br />
+      <p class="info-2">
+        This tutorial is designed to provide information about Kakfka and also provides
+        a step-by-step procedure on how to implement Kafka in your project.
+        <br />
+        Prerequisite for this tutorial would be to have basic knowledge on
+        object-oriented paradigms, docker(basics), and Java. If you are completly new to docker, no worries. This tutorial helps you out.
+      </p>
+
+      <p id="introduction">1. Introduction</p>
+      <p class="info-2">
+        Apache Kafka is a distributed event driven and stream processing platform. Kafka is an open-source 
+        platform developed by Apache Software Foundation written in Java and Scala. "Streaming data means the data that is frequently provided by hundred of sources, whoch essentially sends the data records in at same time."(AWS).
+      </p>
+      <h2>2. History</h2>
+      <p class="info-2">
+        "Kafka was originally developed by LinkedIn and was subsequently open sourced in early 2011. Jay Kreps, Neha Narkhede and Jun Rao helped co-create Kafka. Jay Kreps chose to name the software after the author Kafka because it is “a system optimized for writing”, and he liked Kafka’s work"(LinkedIn., 2011).
+      </p>
+      <h2>3. Messaging Domains</h2>
+      <p class="info-2">
+        Messaging system is a median where the data bits or the messages are sent to and fro between the sender and reciever.
+      </br>
+        There are two types of messaging model that Kafka supports: <br />
+        <li class="info-2">
+          Point to point (PTP) – In this model the messages are "created by an
+          application and pushed into the Queue, the queue holds the messages
+          until consumed by another application."(tutorialspoint, 2022).
+        </li>
+        <br />
+        
+        <br />
+        <li class="info-2">
+          Publish/Subscribe (Pub-Sub) – In this model, the message is "created by
+          a prodcuer and published to a Topic, the same message is consumed
+          by many other applications whenever required using a single destination."(tutorialspoint, 2022).
+        </li>
+        <br />
+        <h2>4. Kafka</h2>
+        <p class="info-2">
+          "Apache Kafka is a distributed publish-subscribe message system and a powerful queue that can control high amount of information and allows us to pass messages to and fro."(tutorialspoint) Kafka messages are generally stored on the secondary storages and used within the cluster to eliminate data redundancy and loss.
+          In production environment Kafka is referreed as Kafka Clusters. A cluster is the one which consists of more than one Kafka server. And each Kafka server is referred to as a broker. 
+        </p>
+        <img class="info-2" src="./img/kafka 1.jpeg" height="400" width="700"  />
+        <p class="info-2" style="font-size:small">Image credit: javainuse</p>
+      </p>
+    </div>
+  </body>
+</html>

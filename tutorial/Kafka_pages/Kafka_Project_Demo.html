@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page of the Project</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        font-family:"Century Gothic";
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        text-align: center;
+      }
+      .topnav a:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      .sidenav {
+        border: 1px solid black;
+        height: 100%;
+        width: 200px;
+        position: absolute;
+        z-index: 2;
+        top: 100;
+        left: 0;
+        background-color: black;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: block;
+      }
+      .sidenav a:hover {
+        color: white;
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      #introduction,
+      h2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        font-size: large;
+        font-weight: bold;
+      }
+      #jms,
+      #kafka {
+        font-family: "Century Gothic";
+      }
+      .info-2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+      .info-3 {
+        z-index: auto;
+        margin-left: 280px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="home" href="../home.html">Home</a>
+      <a href="../intro.html">Introduction</a>
+      <a href="../kafka.html">Kafka</a>
+      <a href="../jms.html">JMS</a>
+      <a href="../citations.html"> References </a>
+      <a href="../analytical.html"> Our view </a>
+      <a href="../resources.html">Additional resources</a>
+      
+      </div>
+    <div class="sidenav">
+      <a href="../kafka.html">Introduction</a>
+      <a href="./Kafka_Architecture.html">Architecture</a>
+      <a href="./Kafka_Installation.html">Kafka Installation</a>
+      <a href="./Kafka_working.html">Working on Kafka</a>
+      <a href="./Kafka_Project_Demo.html">Kafka Project Demo</a>
+    </div>
+    <br />
+    <div>
+        <p class="info-2">
+            <iframe width="1060" height="615" src="https://www.youtube.com/embed/SbntuYIuEcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+    </div>
+      
+           
+          </body>
+</html>

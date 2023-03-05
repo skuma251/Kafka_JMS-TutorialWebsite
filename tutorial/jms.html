@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page of the Project</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        text-align: center;
+      }
+      .topnav a:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      .sidenav {
+        border: 1px solid black;
+        height: 200%;
+        width: 200px;
+        position: absolute;
+        z-index: 2;
+        top: 100;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: rgb(253, 255, 253);
+        display: block;
+      }
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      #introduction,
+      h2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        font-size: large;
+        font-weight: bold;
+      }
+      #jms,
+      #kafka {
+        font-family: "Century Gothic";
+      }
+      .info-2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+      .info-3 {
+        z-index: auto;
+        margin-left: 280px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="home" href="./home.html">Home</a>
+      <a href="./intro.html">Introduction</a>
+      <a href="./kafka.html">Kafka</a>
+      <a href="./jms.html">JMS</a>
+      <a href="./citations.html"> References </a>
+      <a href="./analytical.html"> Our view </a>
+      <a href="./resources.html"> Additional resources </a>
+    </div>
+    <div class="sidenav">
+      <a href="#introduction">Introduction</a>
+      <a href="./JMS_pages/JMS_Architechture.html">Architecture</a>
+      <a href="./JMS_pages/JMS_Messages.html">JMS Messages</a>
+      <a href="./JMS_pages/JMS_PTP.html">Point to point messaging</a>
+      <a href="./JMS_pages/JMS_PubSub.html">Publish-Subscribe messaging</a>
+      <a href="./JMS_pages/JMS_SendingMessage.html">Sending Message</a>
+      <a href="./JMS_pages/JMS_RecievingMessage.html">Recieving Message</a>
+      <a href="./JMS_pages/JMS_Demo.html">JMS Demo</a>
+    </div>
+    <br />
+    <div>
+      <br />
+      <h1>Java Messaging Service - JMS</h1>
+      <br />
+      <p class="info-2">
+        This tutorial is designed to provide information about JMS and provides
+        a step-by-step procedure on how to implement JMS in your project.
+        <br />
+        Prerequisite for this tutorial would be to have basic knowledge on
+        object-oriented paradigms and Java.
+      </p>
+      <h2>History</h2>
+      <p class="info-2">
+        "Java Message Service is developed by Sun Microsystems as a part of Java Platform Enterprise Edition. 
+        The first version of JMS i.e. JMS 1.0.2b was released in June 26, 2001. 
+        The stable version of JMS is JMS 2.0 released in May 21, 2013"(tutorialspoint, 2022)
+        <br />
+      </p>
+
+      <p class="info-2">
+        <strong>Version History:</strong>
+          "JMS 1.0, 
+          JMS 1.0.1, 
+          JMS 1.0.1a, 
+          JMS 1.0.2, 
+          JMS 1.0.2a, 
+          JMS 1.0.2, 
+          JMS 1.1, 
+          JMS 2.0, 
+          JMS 2.0a"(Wikipedia contributors, 2022)
+      </p>
+
+
+      <p id="introduction">1. Introduction</p>
+      <p class="info-2">
+        JMS stands for Java Message Service which is a standard to access
+        messages in messaging middleware. JMS provides an API to create, send
+        and read messages on Java servers.
+      </p>
+      <h2>1.1 Messaging</h2>
+      <p class="info-2">
+        It is a process of exchanging information between two or more
+        applications. Applications can communicate with each other by passing or
+        exchanging information (known as message). Messages are asynchronous
+        requests or responses that will be generated by an application and may
+        be consumed by other applications. "Messaging enables distributed
+        communication that is loosely coupled. A component sends a message to a
+        destination, and the recipient can retrieve the message from the
+        destination. However, the sender and the receiver do not have to be
+        available at the same time in order to communicate. In fact, the sender
+        does not need to know anything about the receiver; nor does the receiver
+        need to know anything about the sender. The sender and the receiver need
+        to know only which message format and which destination to use."(Oracle
+        and/or its affiliates., 2013)
+      </p>
+      <h2>1.2 Messaging Domains</h2>
+      <p class="info-2">
+        There are two types of messaging model that JMS supports: <br />
+        <li class="info-2">
+          Point to point (PTP) – In this model the messages are created by an
+          application and pushed into the Queue, the queue holds the messages
+          until consumed by another application. It "allows a client to send a
+          message to another client via an intermediate abstraction called a
+          queue. The client that sends the message sends it to a specific queue.
+          The client that receives the message extracts it from that queue"
+          (Deakin, Nigel., 2013).
+        </li>
+        <br />
+        <img class="info-2" src="./img/PTP.png" />
+        <p class="info-2" style="font-size:small">Image credit: The Java EE Tutorial</p>
+        <br />
+        <li class="info-2">
+          Publish/Subscribe (Pub-Sub) – In this model, the message is created by
+          an application and published to a Topic, the same message is consumed
+          by many other applications whenever required. It "allows a client to
+          send a message to multiple clients via an intermediate abstraction
+          called a topic. The client that sends the message publishes it to a
+          specific topic. The message is then delivered to all the clients that
+          are subscribed to that topic" (Deakin, Nigel., 2013).
+        </li>
+        <br />
+        <img class="info-2" src="./img/PS.png" />
+        <p class="info-2" style="font-size:small">Image credit: The Java EE Tutorial</p>
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page of the Project</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        text-align: center;
+      }
+      .topnav a:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      .sidenav {
+        border: 1px solid black;
+        height: 300%;
+        width: 200px;
+        position: absolute;
+        z-index: 2;
+        top: 100;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: block;
+      }
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      #introduction,
+      h2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        font-size: large;
+        font-weight: bold;
+      }
+      #jms,
+      #kafka {
+        font-family: "Century Gothic";
+      }
+      .info-2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+      .info-3 {
+        z-index: auto;
+        margin-left: 280px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="home" href="../home.html">Home</a>
+      <a href="../intro.html">Introduction</a>
+      <a href="../kafka.html">Kafka</a>
+      <a href="../jms.html">JMS</a>
+      <a href="../citations.html"> References </a>
+      <a href="../analytical.html"> Our view </a>
+      <a href="../resources.html"> Additional resources </a>
+    </div>
+    <div class="sidenav">
+      <a href="../jms.html">Introduction</a>
+      <a href="./JMS_Architechture.html">Architecture</a>
+      <a href="./JMS_Messages.html">JMS Messages</a>
+      <a href="./JMS_PTP.html">Point to point messaging</a>
+      <a href="./JMS_PubSub.html">Publish-Subscribe messaging</a>
+      <a href="./JMS_SendingMessage.html">Sending Message</a>
+      <a href="./JMS_RecievingMessage.html">Recieving Message</a>
+      <a href="./JMS_Demo.html">JMS Demo</a>
+    </div>
+    <br />
+    <p id="introduction">Point to Point Messaging</p>
+    <p class="info-2">
+      The main goal of Point to point messaging is when you want only one
+      consumer to receive the message at a time.
+    </p>
+    <div class="info-2">
+      <p><strong>Process: </strong></p>
+      <p>
+        Messages are sent via a queue. Any number of producers can send a
+        message onto the queue. But, a message can be accessed by one consumer
+        only.
+      </p>
+      <li>
+        <strong> When is it used? </strong>
+      </li>
+      <p>
+        PTP is specifically used when we want only one consumer to access the
+        message at a time.
+      </p>
+      <li>
+        <strong> Queue ordering: </strong>
+      </li>
+      <p>Messages are ordered on the basis of when they enter the queue.</p>
+      <li>
+        <strong>Advantages of PTP: </strong>
+      </li>
+      <p>
+        1. Messages do not get lost even in the case when there are no receivers
+        for that particular message.
+      </p>
+      <p>
+        2. A queue browser can be used if the client is a Java client. This way,
+        contents can be continuously checked on the queue.
+      </p>
+      <p>
+        3. A message selector can be used to get messages that are not present
+        at the head of the queue.
+      </p>
+    </div>
+  </body>
+</html>

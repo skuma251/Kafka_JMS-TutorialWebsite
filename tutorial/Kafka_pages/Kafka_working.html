@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page of the Project</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        font-family:"Century Gothic";
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        text-align: center;
+      }
+      .topnav a:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      .sidenav {
+        border: 1px solid black;
+        height: 380%;
+        width: 200px;
+        position: absolute;
+        z-index: 2;
+        top: 100;
+        left: 0;
+        background-color: black;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: block;
+      }
+      .sidenav a:hover {
+        color: white;
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      #introduction,
+      h2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        font-size: large;
+        font-weight: bold;
+      }
+      #jms,
+      #kafka {
+        font-family: "Century Gothic";
+      }
+      .info-2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+      .info-3 {
+        z-index: auto;
+        margin-left: 280px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="home" href="../home.html">Home</a>
+      <a href="../intro.html">Introduction</a>
+      <a href="../kafka.html">Kafka</a>
+      <a href="../jms.html">JMS</a>
+      <a href="../citations.html"> References </a>
+      <a href="../analytical.html"> Our view </a>
+      <a href="../resources.html"> Additional resources </a>      
+      </div>
+    <div class="sidenav">
+      <a href="../kafka.html">Introduction</a>
+      <a href="./Kafka_Architecture.html">Architecture</a>
+      <a href="./Kafka_Installation.html">Kafka Installation</a>
+      <a href="./Kafka_working.html">Working on Kafka</a>
+      <a href="./Kafka_Project_Demo.html">Kafka Project Demo</a>
+    </div>
+    <br />
+    <div>
+      <p id="introduction">Writing Producer and Consumer code</p>
+      <p class="info-2">
+        This topic provides us with the details of the the producer and consumer working.
+      </p>
+      <p class="info-2">
+        We will have the Kafka server running in AWS or on our local host . 
+      </br>
+        Then we will write Kafka Producer application then this will create and send the messages to the Kafka Broker.
+      </br>
+      There will be a Kafka consumer provided during the installation of Kafka. These will consume the messages sent by the Kafka Producer.
+      </p>
+
+      <div class="info-2">
+        <p>
+            Now we are ready to write the Kafka Producer application.
+        </br>
+        Wait!!! Before that make sure you have Kafka Server, Zookeeper running in the background.
+        </p>
+
+        <p>
+            Create a new project in your IDE. We use Maven as a package manager and then select any JDK with the latest version.
+        </br>
+        </br>
+        <img src="../img/Sample_prod_pom.png" height="500" width="800" />
+        </p>
+        <p>
+            In your pom.xml write down the dependencies shown above.
+            Then next we will be writng the SampleProducer application.
+        </p>
+        <p>
+        </br>
+        <img src="../img/Sam_Pro_Snippet.png" height="500" width="800"/>
+        </br>
+        This is the sample producer code for writing messages from Kafka producer to the broker.
+        </p>
+
+      
+        <p>
+         Lets go to the Kafka Consumer Application</p>
+        </br>
+        <img src="../img/Consumer_pom.png" height="500" width="800"/>
+        </br>
+        This is the pom.xml file that have to be written in Consumer Application.
+        Then next we will be writng the SampleProducer application.
+        </p>
+
+        <p>
+        </p>
+           </br>
+           <img src="../img/Con_snippet.png" height="500" width="800"/>
+           </br>
+           This is the sample consumer file for reading or consuming messages written by the producer.
+
+           </p>
+
+          </div>
+          </div>
+          </body>
+</html>

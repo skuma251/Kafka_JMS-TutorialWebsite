@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page of the Project</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        text-align: center;
+      }
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      @media screen and (max-height: 450px) {
+      }
+      .info {
+        z-index: auto;
+        /* margin-left: 610px;
+
+        margin-right: 50px; */
+        text-align: center;
+        width: 200%;
+      }
+      .info-2 {
+        font-size: large;
+        font-style: italic;
+        text-align: center;
+      }
+      .info-3 {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      .box {
+        color: black;
+        width: 100px;
+        font-size: large;
+        padding: 50px;
+        margin: 80px;
+      }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 150px;
+        text-align: center;
+        font-size: large;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="home" href="./home.html">Home</a>
+      <a href="./intro.html">Introduction</a>
+      <a href="./kafka.html">Kafka</a>
+      <a href="./jms.html">JMS</a>
+      <a href="./citations.html"> References </a>
+      <a href="./analytical.html"> Our view </a>
+      <a href="./resources.html"> Additional resources </a>
+    </div>
+    <br />
+    <div>
+      <h1>Our Point of View</h1>
+      <br />
+      <div class="info-3">
+        <p>
+          Analysis of JMS and Kafka
+          <br />
+          JMS and Kafka act as ideal solutions for the current usage of
+          messaging and communications between different parts of an
+          application. They provide an optimal solution for effective
+          transmission of data depending on the type and number of consumers and
+          producers.
+          <br />
+          <br />
+          When sending messages on Kafka, messages are not queued, but all data
+          is extracted from all producers and accumulated which is then routed
+          to different consumers. This method of handling data is dynamic. It
+          provides a highly scalable solution as there is no one-to-one
+          connection or integration being established, this way any number of
+          consumers and producers can be added. A large amount of data can be
+          handled as it provides a way of automatic load balancing.
+          <br />
+          <br />
+          JMS on the other hand follows a Queue-(FIFO) approach. JMS is scalable
+          to a limit. Messages are sent in a queue. It does not do any automatic
+          load balancing. JMS does offer a big advantage and that is filtering.
+          JMS uses message selectors for the purpose of filtering.Depending on
+          different property values of the message they can be filtered out on
+          the basis of the consumer’s interest.
+          <br />
+          <br />
+          At the end of the day these technologies cannot be compared with each
+          other, as they both are extremely application specific. Each have
+          their own pros and cons. But before designing your application keep
+          the following things in your mind.
+          <br />
+          <br />
+          Now that you have gone through the tutorial try thinking of the
+          following scenarios and a possible solution as to which is better
+          Kafka/ JMS?
+          <br />
+          <br />
+          What is the load of consumers and producers?
+          <br />
+          <br />
+          Do your messages need to be filtered?
+          <br />
+          <br />
+          Do messages need to be ordered based on topics?
+          <br />
+          <br />
+          Does your application need to be scaled massively in the future?
+          <br />
+          <br />
+          Would you like any abstraction while handling data?
+          <br />
+          <br />
+
+          Answers:
+          <br />
+          <br />
+          Higher load of a consumers would mean Kafka is a better solution.
+          <br />
+          <br />
+          If your messages need to be filtered then definitely JMS.
+          <br />
+          <br />
+          If your messages need to be ordered based on topics then Kafka would
+          be ideal.
+          <br />
+          <br />
+          If your application needs to be scaled massively in the future then
+          definitely use Kafka.
+          <br />
+          <br />
+          If you need abstraction while handling data use Kafka.
+        </p>
+      </div>
+      <br />
+    </div>
+  </body>
+</html>

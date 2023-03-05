@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page of the Project</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Century Gothic";
+      }
+      h1 {
+        text-align: center;
+        margin: 0;
+        font-family:"Century Gothic";
+      }
+      .topnav {
+        overflow: hidden;
+        background-color: rgb(0, 0, 0);
+      }
+      .topnav a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        text-align: center;
+      }
+      .topnav a:hover {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      }
+
+      .sidenav {
+        border: 1px solid black;
+        height: 180%;
+        width: 200px;
+        position: absolute;
+        z-index: 2;
+        top: 100;
+        left: 0;
+        background-color: black;
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: block;
+      }
+      .sidenav a:hover {
+        color: white;
+      }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      #introduction,
+      h2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        font-size: large;
+        font-weight: bold;
+      }
+      #jms,
+      #kafka {
+        font-family: "Century Gothic";
+      }
+      .info-2 {
+        z-index: auto;
+        margin-left: 250px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+      .info-3 {
+        z-index: auto;
+        margin-left: 280px;
+        margin-right: 50px;
+        padding: 5px;
+        font-size: large;
+        font-style: italic;
+        font-family: "Century Gothic";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="home" href="../home.html">Home</a>
+      <a href="../intro.html">Introduction</a>
+      <a href="../kafka.html">Kafka</a>
+      <a href="../jms.html">JMS</a>
+      <a href="../citations.html"> References </a>
+      <a href="../analytical.html"> Our view </a>
+      <a href="./resources.html"> Additional resources </a>
+      
+      </div>
+    <div class="sidenav">
+      <a href="../kafka.html">Introduction</a>
+      <a href="./Kafka_Architecture.html">Architecture</a>
+      <a href="./Kafka_Installation.html">Kafka Installation</a>
+      <a href="./Kafka_working.html">Working on Kafka</a>
+      <a href="./Kafka_Project_Demo.html">Kafka Project Demo</a>
+
+    </div>
+    <br />
+    <div>
+      <p id="introduction">Kafka Architecture</p>
+      <p class="info-2">
+        This topic provides us with the details of the structure of Kafka and its
+        composition.
+      </p>
+      <h2>Elements of Kafka</h2>
+      <div class="info-2">
+        <li>
+          <strong>Publisher/Producer – </strong> Every Kafka Ecosystem have multiple Publishers and these publishers can send messages or publish data to the topic.
+         <br />
+        </li>
+        <li>
+          <strong>Messages – </strong>The information that needs to be exchanged
+          between the applications.
+        </li>
+        <li>
+          <strong>Kafka-Server – </strong>When there is an application or bin when you spin up, you will get a kafka server.
+          In kafka Server we can have multiple topics and for every topic there are partitions  
+        </li>
+        <li>
+          <strong>Consumer Group – </strong> There can be a multiple consumer groups inside the Kafka Ecosystem. Each Consumer can have one or more than one Consumers present inside it. The role of the consumer is the read or consume the message from the topics. 
+        </li>
+      </div>
+      <br />
+      <div class="info-2">
+        <p>
+          Kafka holds key-value messages that arrive from producers. The information obtained may be broken down into many sections under various topics. "Within the individual sections messages are sorted by their position in that section, also there are indexed and saved with a timestamp."(documentation kafka) 
+        </p>
+        <p>
+          "A Topic is the subject identifier of a category of messages or events."(Sookocheff.,2015)
+        </br>
+            A Partition is same as how we have disc partition, we do this partition because it helps event streams to provide high throughput 
+        </p>
+        </br>
+      "Kafka Replication Factor refers to the multiple copies of data stored across several Kafka brokers. Setting the Kafka Replication Factor allows Kafka to provide high availability of data and prevent data loss if the broker goes down or cannot handle the request."(hevodata.,2020)
+        </p>
+        <p><strong>Info About Zookeeper:</strong></p>
+        <p>
+          Zookeeper is an application present in the ecosystem.
+          "Zookeeper is a distributed, open-source configuration system and a synchronization service."(edureka.,2019)
+          All the topics data, consumer groups etc are stored in Apache Zookeeper. The word configuration came because when ever there is a change in the configurations of the files it automatically synchronizes the changes throughout the ecosystem.
+          It also says which messages the consumer read, Topic information, Network information of the cluster etc.
+        </p>
+
+       
+
+        <p><strong>Kafka API</strong></p>
+        <p>
+          kafka has four common APIs for sending and receiving
+          messages.(LinkedIn.,2011)
+        </p>
+        <li>
+          <strong>Producer API – </strong>Giving permission to an application to send the data streams.
+        </li>
+        <br />
+        <li>
+          <strong>Consumer API  – </strong>Giving permission to an application to consume to the topics and access the data streams.
+        </li>
+        <br />
+        <li>
+          <strong>Connector API  – </strong>It processes the producer, consumer APIs which connect the topics to the existing application.
+        </li>
+        <br />
+        <li>
+          <strong>Streams API  – </strong>The result is produced by this API after converting the input streams to output.
+        </li>
+
+
+        <br />
+        <p><strong>Benifits of Kafka(confluent)</strong></p>
+        <li>
+          <strong>Fault Tolerant - </strong>Ability of a system to continue operating without interruption when its one or more components got failed.
+        </li>
+        <li>
+          <strong>Scalability - </strong>You can scale the kafka system based on the load requirements by adding new brokers and also we can increase the number of consumers for testing whether it is working good for heavy loads.
+        </li>
+        <li>
+          <strong>Durability - </strong> "Kafka messages uses logs" and are generally stored on the secondary storages and can be accessed quickly, hence durable.
+        </li>
+        <li>
+          <strong>Reliability - </strong> "Kafka is well distributed, clusters all the information like messages, bytes etc and is risk tolerant"
+        </li>
+        <li>
+            <strong>Performance - </strong>  "Kafka has high efficiency on both sides publishing and subscribing messaging" i.e., it can control large amount of data and messages easily.
+          </li>
+          </div>
+          </div>
+          </body>
+</html>
